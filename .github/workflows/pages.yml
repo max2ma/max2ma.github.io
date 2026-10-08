@@ -26,6 +26,16 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Install browser dependencies
+        run: |
+          npm ci --prefix pdf-tools/merge-pdf-tool
+          npm ci --prefix pdf-tools/rotate-pdf-page-tool
+          npm ci --prefix pdf-tools/compress-pdf-tool
+          npm ci --prefix pdf-tools/two-pages-one-pdf-tool
+          mkdir -p node_modules
+          cp -R pdf-tools/compress-pdf-tool/node_modules/pdf-lib node_modules/
+          cp -R pdf-tools/compress-pdf-tool/node_modules/pdfjs-dist node_modules/
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
