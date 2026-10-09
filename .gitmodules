@@ -1,4 +1,4 @@
 [submodule "pdf-tools"]
-	path = pdf-tools
+	path = tools
 	url = https://github.com/max2ma/pdf-tools.git
 	branch = main
